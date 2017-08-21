@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.pixelgang.eclipse" version="1.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android = "http://schemas.android.com/apk/res/android" id="com.pixelgang.eclipse" version="1.0">
 
 	<name>Solar Eclipse Viewer</name>
 	<description>Watch the Eclipse with this smart app</description>
@@ -19,14 +19,17 @@
 	<preference name="fullscreen" value="true" />
 	<gap:config-file platform="ios" parent="UIStatusBarHidden"><true/></gap:config-file>
 	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance"><false/></gap:config-file>
+	<gap:config-file platform="android" parent="/manifest" mode="delete"> <uses-permission android:name="android.permission.READ_PHONE_STATE"/> </gap:config-file>
 
 	<preference name="deployment-target" value="8.0" />
 	<preference name="android-minSdkVersion" value="16" />
 	<plugin name="cordova-plugin-crosswalk-webview" source="npm" />
+	<plugin name="https://github.com/cranberrygame/cordova-plugin-ad-admob" source="npm" />
 
 	<plugin name="cordova-plugin-wkwebview-engine" />
 	<plugin name="cordova-plugin-file" />
 	<plugin name="cordova-plugin-httpd" />
+	<plugin name="cordova-plugin-camera" />
 
 	<plugin name="cordova-plugin-whitelist" source="npm" />
 	<access origin="*" />
